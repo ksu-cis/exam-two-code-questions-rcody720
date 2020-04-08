@@ -6,7 +6,35 @@
              xmlns:local="clr-namespace:ExamTwoQuestions.PointOfSale"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+
+    <UserControl.Resources>
+        <Style TargetType="RadioButton">
+            <Setter Property="FontSize" Value="25"/>
+            <Setter Property="HorizontalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="0 40 0 0"/>
+        </Style>
+        <Style TargetType="ToggleButton">
+            <Setter Property="Margin" Value="40 20"/>
+            <Setter Property="FontSize" Value="25"/>
+        </Style>
+    </UserControl.Resources>
     <Grid>
-        <TextBlock>Customize Cobbler</TextBlock>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="50"/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Column="0" Grid.Row="0" FontSize="30" HorizontalAlignment="Center" Grid.ColumnSpan="2">Customize Cobbler</TextBlock>
+        
+        <RadioButton Grid.Row="1" Grid.Column="0" IsChecked="{Binding Path=IsBlueberry}">Blueberry</RadioButton>
+        <RadioButton Grid.Row="2" Grid.Column="0" IsChecked="{Binding Path=IsCherry}">Cherry</RadioButton>
+        <RadioButton Grid.Row="3" Grid.Column="0" IsChecked="{Binding Path=IsPeach}">Peach</RadioButton>
+
+        <ToggleButton Grid.Column="1" Grid.Row="2" IsChecked="{Binding Path=WithIceCream}">With Ice Cream</ToggleButton>
     </Grid>
 </UserControl>
